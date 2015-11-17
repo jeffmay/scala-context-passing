@@ -4,13 +4,13 @@ lazy val commonRootSettings = Seq(
   organizationName := "Jeff May",
   scalaVersion := "2.11.7",
 
+  resolvers += Resolver.bintrayRepo("jeffmay", "maven"),
   // disable compilation of ScalaDocs, since this always breaks on links and isn't as helpful as source
   sources in(Compile, doc) := Seq.empty,
   // disable publishing empty ScalaDocs
   publishArtifact in (Compile, packageDoc) := false,
   licenses += ("Apache-2.0", url("http://opensource.org/licenses/apache-2.0"))
 )
-
 
 lazy val root = (project in file("."))
   .settings(commonRootSettings)
